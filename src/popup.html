@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<style>
 		body {
-			width: 300px;
+			width: 320px;
 			font-family: 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
 			font-size: 13px;
 			margin: 0;
@@ -27,7 +27,7 @@
 		.stat-row {
 			display: flex;
 			justify-content: space-between;
-			padding: 6px 0;
+			padding: 5px 0;
 			border-bottom: 1px solid #f0f0f0;
 		}
 		.stat-row:last-child {
@@ -40,9 +40,39 @@
 			font-weight: 600;
 			color: #5075ce;
 		}
+
+		.add-rule {
+			background: #fff;
+			border-radius: 6px;
+			padding: 12px;
+			box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+			margin-bottom: 14px;
+		}
+		.add-rule h2 {
+			font-size: 13px;
+			font-weight: 600;
+			margin: 0 0 10px 0;
+			color: #333;
+		}
+		.add-rule select,
+		.add-rule input {
+			width: 100%;
+			padding: 7px 8px;
+			border: 1px solid #ddd;
+			border-radius: 4px;
+			font-size: 12px;
+			margin-bottom: 8px;
+			box-sizing: border-box;
+		}
+		.add-rule select:focus,
+		.add-rule input:focus {
+			outline: none;
+			border-color: #5075ce;
+		}
+
 		button {
 			width: 100%;
-			padding: 10px;
+			padding: 9px;
 			border: none;
 			border-radius: 4px;
 			background: #5075ce;
@@ -54,10 +84,46 @@
 		button:hover {
 			background: #3d5faa;
 		}
+		#btn-add {
+			background: #38851b;
+			margin-bottom: 8px;
+		}
+		#btn-add:hover {
+			background: #2d6e16;
+		}
+		#open-options {
+			background: transparent;
+			color: #5075ce;
+			border: 1px solid #5075ce;
+		}
+		#open-options:hover {
+			background: #5075ce;
+			color: #fff;
+		}
+
+		.msg {
+			text-align: center;
+			font-size: 12px;
+			padding: 6px 0;
+			margin-bottom: 8px;
+			border-radius: 4px;
+			display: none;
+		}
+		.msg.success {
+			background: #e8f5e9;
+			color: #2e7d32;
+			display: block;
+		}
+		.msg.error {
+			background: #fbe9e7;
+			color: #c62828;
+			display: block;
+		}
 	</style>
 </head>
 <body>
 	<h1 data-i18n="popupTitle">Downloads Router</h1>
+
 	<div class="stats">
 		<div class="stat-row">
 			<span class="stat-label" data-i18n="popupFilenameRules">Filename rules</span>
@@ -72,6 +138,21 @@
 			<span class="stat-value" id="referrer-count">0</span>
 		</div>
 	</div>
+
+	<div class="add-rule">
+		<h2 data-i18n="popupAddRule">Quick add rule</h2>
+		<select id="rule-type">
+			<option value="mime" data-i18n="popupTypeMime">MIME type</option>
+			<option value="filename" data-i18n="popupTypeFilename">Filename keyword</option>
+			<option value="referrer" data-i18n="popupTypeReferrer">Source domain</option>
+		</select>
+		<input type="text" id="rule-match" data-i18n-placeholder="popupMatchPlaceholder" placeholder="e.g. image/jpeg, epub, github.com">
+		<input type="text" id="rule-folder" data-i18n-placeholder="popupFolderPlaceholder" placeholder="Destination folder, e.g. images/">
+		<button id="btn-add" data-i18n="popupBtnAdd">+ Add rule</button>
+	</div>
+
+	<div class="msg" id="msg"></div>
+
 	<button id="open-options" data-i18n="popupOpenSettings">Open Settings</button>
 	<script src="popup.js"></script>
 </body>

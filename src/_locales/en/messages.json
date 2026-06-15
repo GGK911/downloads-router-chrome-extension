@@ -126,5 +126,32 @@
 	},
 	"popupOpenSettings": {
 		"message": "Open Settings"
+	},
+	"popupAddRule": {
+		"message": "Quick add rule"
+	},
+	"popupTypeMime": {
+		"message": "MIME type"
+	},
+	"popupTypeFilename": {
+		"message": "Filename keyword"
+	},
+	"popupTypeReferrer": {
+		"message": "Source domain"
+	},
+	"popupMatchPlaceholder": {
+		"message": "e.g. image/jpeg, epub, github.com"
+	},
+	"popupFolderPlaceholder": {
+		"message": "Destination folder, e.g. images/"
+	},
+	"popupBtnAdd": {
+		"message": "+ Add rule"
+	},
+	"popupMsgEmpty": {
+		"message": "Please fill in both fields."
+	},
+	"popupMsgAdded": {
+		"message": "Rule added!"
 	}
 }
