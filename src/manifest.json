@@ -17,6 +17,15 @@
 		"storage"
 	],
 
+	"action": {
+		"default_popup": "popup.html",
+		"default_icon": {
+			"16": "data/icon16.png",
+			"32": "data/icon32.png",
+			"48": "data/icon48.png"
+		}
+	},
+
 	"background": {
 		"service_worker": "manager.js"
 	},

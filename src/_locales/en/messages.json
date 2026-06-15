@@ -8,5 +8,123 @@
 
 	"msg_saved": {
 		"message": "Settings saved!"
+	},
+	"msg_welcome": {
+		"message": "Thank you for installing Downloads Router!<br>Please read the instructions below, then head over to the routing rules to configure the extension."
+	},
+	"msg_invalid_order": {
+		"message": "Invalid ruleset hierarchy, resetting to default."
+	},
+
+	"navRouting": {
+		"message": "Routing rules"
+	},
+	"navUsage": {
+		"message": "Usage instructions"
+	},
+	"navAbout": {
+		"message": "About"
+	},
+
+	"routingTitle": {
+		"message": "Routing rules"
+	},
+	"routingDesc": {
+		"message": "Please provide destination folders delimited by forward slash (/)."
+	},
+	"routingDescSub": {
+		"message": "Destinations must be located within the base downloads folder; use symbolic links to circumvent this restriction (see usage instructions)."
+	},
+
+	"ruleOrderTitle": {
+		"message": "Rule execution hierarchy"
+	},
+	"ruleOrderDesc": {
+		"message": "Specify the order in which you would like the tables traversed."
+	},
+	"ruleOrderDefault": {
+		"message": "Default is filename, referrer, mime."
+	},
+
+	"mimeTitle": {
+		"message": "Filetype \u2192 folder mapping"
+	},
+	"thMime": {
+		"message": "Filetype (MIME)"
+	},
+	"thDestination": {
+		"message": "Destination folder"
+	},
+	"btnAddRule": {
+		"message": "+ Add new routing rule"
+	},
+
+	"referrerTitle": {
+		"message": "Referrer \u2192 folder mapping"
+	},
+	"globalRefLabel": {
+		"message": "Enable global referrer folders"
+	},
+	"globalRefDesc": {
+		"message": "Enable this checkbox to make all downloads (not preceded by another explicit rule) be stored in a folder with the same name as the source domain."
+	},
+	"thSource": {
+		"message": "Source domain"
+	},
+	"referrerNote1": {
+		"message": "Do not include http:// or www. Other subdomains, such as images.domain.com, are required."
+	},
+	"referrerNote2": {
+		"message": "Larger websites often utilize Content Distribution Networks, which means that the referrer for a certain image might not be the same as the domain of the website you are visiting."
+	},
+
+	"filenameTitle": {
+		"message": "Filename \u2192 folder mapping"
+	},
+	"thFilename": {
+		"message": "Filename keyword"
+	},
+	"filenameNote": {
+		"message": "* Keywords are case-insensitive. Recommended basic usage is a single keyword per rule. The keyword is treated directly as a regular expression."
+	},
+
+	"btnSave": {
+		"message": "\u2714 Save configuration"
+	},
+
+	"commonMimeTitle": {
+		"message": "Common MIME types"
+	},
+	"commonMimeDesc": {
+		"message": "This table contains a few common MIME types that might help you set up your routing configuration."
+	},
+	"advancedKeywordsTitle": {
+		"message": "Advanced filename keywords"
+	},
+	"advancedKeywordsDesc": {
+		"message": "A few helpful tricks for more powerful filename-based routing."
+	},
+
+	"usageTitle": {
+		"message": "Usage instructions"
+	},
+	"aboutTitle": {
+		"message": "About this extension"
+	},
+
+	"popupTitle": {
+		"message": "Downloads Router"
+	},
+	"popupFilenameRules": {
+		"message": "Filename rules"
+	},
+	"popupMimeRules": {
+		"message": "MIME type rules"
+	},
+	"popupReferrerRules": {
+		"message": "Referrer rules"
+	},
+	"popupOpenSettings": {
+		"message": "Open Settings"
 	}
 }

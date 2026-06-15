@@ -1,3 +1,14 @@
+function apply_i18n() {
+	document.querySelectorAll('[data-i18n]').forEach(function(el) {
+		var msg = chrome.i18n.getMessage(el.getAttribute('data-i18n'));
+		if (msg) el.textContent = msg;
+	});
+	document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+		var msg = chrome.i18n.getMessage(el.getAttribute('data-i18n-placeholder'));
+		if (msg) el.placeholder = msg;
+	});
+}
+
 function save_options() {
 	var maps = [{}, {}, {}];
 	var tables = [
@@ -29,7 +40,7 @@ function save_options() {
 
 	['filename', 'referrer', 'mime'].every(function(item) {
 		if(order.indexOf(item) == -1) {
-			alert('Invalid ruleset hierarchy, resetting to default.');
+			alert(chrome.i18n.getMessage('msg_invalid_order'));
 			order = ['filename', 'referrer', 'mime'];
 			return false;
 		}
@@ -42,8 +53,7 @@ function save_options() {
 
 	// Flash a status message
 	var status = document.getElementById('status');
-	status.innerHTML = '<span class="green">&#10004;</span> Settings saved!';
-	//status.innerHTML = '<span class="green">&#10004;</span>' + chrome.i18n.getMessage('msg_saved');
+	status.innerHTML = '<span class="green">&#10004;</span> ' + chrome.i18n.getMessage('msg_saved');
 	status.style.display = 'block';
 	setTimeout(function() {
 		status.innerHTML = '';
@@ -211,7 +221,7 @@ function options_setup() {
 			active = 'usage';
 
 			var status = document.getElementById('status');
-			status.innerHTML = 'Thank you for installing Downloads Router!<br>Please read the instructions below, then head over to the routing rules to configure the extension.';
+			status.innerHTML = chrome.i18n.getMessage('msg_welcome');
 			status.style.display = 'block';
 			setTimeout(function() {
 				status.innerHTML = '';
@@ -253,13 +263,15 @@ function handle_click() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+	apply_i18n();
+
 	chrome.storage.local.get('dr_version', function(result) {
 		var version = result.dr_version;
 		var manifest_version = chrome.runtime.getManifest().version;
 
 		if(!version || version != manifest_version) {
 			var status = document.getElementById('status');
-			status.innerHTML = 'Thank you for installing Downloads Router!<br>Please read the instructions below, then head over to the routing rules to configure the extension.';
+			status.innerHTML = chrome.i18n.getMessage('msg_welcome');
 			status.style.display = 'block';
 			setTimeout(function() {
 				status.innerHTML = '';
